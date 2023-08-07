@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Flex</title>
+</head>
+<body>
+    <!--Flex wrap e nowrap, é sobre a quebra de linha, o padrão é nowrap, ou seja, as divs vão se comprimir
+    Ja o wrap, vai quebrar a linha, e vai ficar uma div embaixo da outra
+    Se for wrap-reverse, vai quebrar a linha de baixo pra cima, ou seja, a linha que iria para baixo vai para cima
+    -->
+    <div style="display: flex; flex-wrap: wrap; width: 100px; height: 100px">
+        <div style="width: 50px;" class="border-4 border-blue-600">1</div>
+        <div style="width: 50px;" class="border-4 border-blue-600">2</div>
+        <div style="width: 50px;" class="border-4 border-blue-600">3</div>
+        <div style="width: 50px;" class="border-4 border-blue-600">3</div>
+        <div style="width: 50px;" class="border-4 border-blue-600">3</div>
+    </div>
+
+    <!--Essa div está com uma altura de 100px, como tem 3 divs de 50px, totalizando 150, ele teria dificuldades
+    de se encaixar, então o flex-flow (flex-wrap e flex-direction juntos) column wrap, faz com que as divs sejam esticadas em coluna
+    pois em linha elas caberiam
+
+    Foi dificil pra mim entender um pouco esse conceito de coluna e linha, mas é basicamente o seguinte, quando é em linha
+    e vc nao tem mais espaço, ele quebra pra proxima linha, quando é em coluna, e nao tem mais espaço, ele cria mais uma coluna
+    -->
+    <div style="display: flex; flex-flow: column wrap; height: 100px;" class="border-4 border-teal-500">
+      <div style="height: 50px;" class="border-2 border-black">1</div>
+      <div style="height: 50px;" class="border-2 border-black">2</div>
+      <div style="height: 50px;" class="border-2 border-black">3</div>
+      <div style="height: 50px;" class="border-2 border-black">4</div>
+    </div>
+      
+    <!--Nao tenho muitos comentarios aqui pois creio que ja esta dominado esse conteito de display flex e justify content
+    Na vdd qndo estava escrevendo isso eu percebi que nao, eu so tenho o space-between, vamos ver o restante
+    -->
+    <div style="display: flex; justify-content: space-between; width: 200px;" class="border-2 border-black">
+        <div class="border-2 border-black">1</div>
+        <div class="border-2 border-black">2</div>
+        <div class="border-2 border-black">3</div>
+    </div>
+    <div style="width: 200px" class="flex">
+        <div style="display: flex; justify-content: start; width: 100px;" class="border-2 border-black">
+            <div class="border-2 border-black">1</div>
+            <div class="border-2 border-black">2</div>
+            <div class="border-2 border-black">3</div>
+        </div>
+        <div style="display: flex; justify-content: end; width: 100px;" class="border-2 border-black">
+            <div class="border-2 border-black">1</div>
+            <div class="border-2 border-black">2</div>
+            <div class="border-2 border-black">3</div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-around; width: 200px;" class="border-2 border-black">
+        <div class="border-2 border-black">1</div>
+        <div class="border-2 border-black">2</div>
+        <div class="border-2 border-black">3</div>
+    </div>
+    <div style="display: flex; justify-content: space-evenly; width: 200px;" class="border-2 border-black">
+        <div class="border-2 border-black">1</div>
+        <div class="border-2 border-black">2</div>
+        <div class="border-2 border-black">3</div>
+    </div>
+    <div style="display: flex; justify-content: center; width: 200px;" class="border-2 border-black">
+        <div class="border-2 border-black">1</div>
+        <div class="border-2 border-black">2</div>
+        <div class="border-2 border-black">3</div>
+    </div>
+
+    <div class="flex flex-row bg-red-300">
+        <div class="div bg-red-600 p-6 m-6">1</div>
+        <div class="div bg-red-600 p-6 m-6">2</div>
+        <div class="div bg-red-600 p-6 m-6">3</div>
+    </div>
+    <div class="flex flex-row-reverse bg-red-300">
+        <div class="div bg-red-600 p-6 m-6">1</div>
+        <div class="div bg-red-600 p-6 m-6">2</div>
+        <div class="div bg-red-600 p-6 m-6">3</div>
+    </div>
+
+    <!--Exercicio 5: crie um container flex layout colunar 6 itens com cores diferentes-->
+    <div class="container flex flex-col flex-wrap bg-red-200 m-auto h-12">
+        <div class="bg-red-400 p-2 m-2 w-20">1</div>
+        <div class="bg-red-500 p-2 m-2 w-20">2</div>
+        <div class="bg-red-600 p-2 m-2 w-20">3</div>
+        <div class="bg-red-700 p-2 m-2 w-20">4</div>
+        <div class="bg-red-800 p-2 m-2 w-20">5</div>
+        <div class="bg-red-900 p-2 m-2 w-20">6</div>
+    </div>
+
+    <div class="flex container bg-green-400 p-8">
+        <div class="flex-1 bg green-800 border-2 border-black">1</div>
+        <div class="flex-1 bg green-800 border-2 border-black">2</div>
+        <div class="flex-none bg green-800 border-2 border-black">2</div>
+    </div>
+
+    <!-- Order -->
+    <div class="container flex flex-col flex-wrap bg-purple-200 m-auto h-12">
+        <div class="bg-purple-400 p-2 m-2 w-20 order-last">1</div>
+        <div class="bg-purple-500 p-2 m-2 w-20 order-5">2</div>
+        <div class="bg-purple-600 p-2 m-2 w-20 order-4">3</div>
+        <div class="bg-purple-700 p-2 m-2 w-20 order-3">4</div>
+        <div class="bg-purple-800 p-2 m-2 w-20 order-2">5</div>
+        <div class="bg-purple-900 p-2 m-2 w-20 order-first">6</div>
+    </div>
+
+    <!--Exercicio 6: criar  um container com flex, o container deve inverter a ordem depois da resolução lg-->
+    <div class="container flex flex-col flex-wrap bg-purple-200 m-auto h-12">
+        <div class="bg-purple-400 p-2 m-2 w-20 lg:order-last">1</div>
+        <div class="bg-purple-500 p-2 m-2 w-20 lg:order-5">2</div>
+        <div class="bg-purple-600 p-2 m-2 w-20 lg:order-4">3</div>
+        <div class="bg-purple-700 p-2 m-2 w-20 lg:order-3">4</div>
+        <div class="bg-purple-800 p-2 m-2 w-20 lg:order-2">5</div>
+        <div class="bg-purple-900 p-2 m-2 w-20 lg:order-first">6</div>
+    </div>
+
+</body>
+</html>
