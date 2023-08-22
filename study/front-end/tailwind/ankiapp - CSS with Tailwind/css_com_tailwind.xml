@@ -1,0 +1,238 @@
+<deck name="CSS com Tailwind"><fields><code name='Code' sides='11' lang='css'></code><text name='Text' sides='01' ></text></fields><cards><card><field name='Code'>Oque é e como funciona o place-items no grid e quais suas opções?</field><field name='Text'>O place items, alinha os itens no eixo X e no eixo Y, e as divs vão ocupar o espaço referente ao seu conteúdo
+
+As opções são
+
+place-items-start
+place-items-center
+place-items-end
+place-items-baseline
+place-items-stretch</field></card><card><field name='Code'>Qual propriedade para espaçamento de letras?</field><field name='Text'>.tracking-tighter
+e 
+.tracking-widest</field></card><card><field name='Code'>Em uma div flexivel com altura de 40, como será o preenchimento das divs filhas em relação a altura?</field><field name='Text'>Serão preenchidas totalmente a altura, devido ao comportamento padrão item-stretch</field></card><card><field name='Code'>Como definir um texto  super grande italico e em bold?</field><field name='Text'>class="text-xl italic bold"</field></card><card><field name='Code'>Como colocar elemento de sombra nos elementos?</field><field name='Text'>Class 'shadow-'</field></card><card><field name='Code'>Quais sao as propriedades de cursor?</field><field name='Text'>cursor-pointer
+cursor-wait
+cursor-not-allowed
+cursor-text</field></card><card><field name='Code'>Como definir novas cores no tailwind e substituindo as antigas? (detalhe, apagara todas as defaults do tailwind)</field><field name='Text'>Utilizar o extends dentro do arquivo tailwind.config.js
+O padrão é nome da classe e o hexadecimal da cor
+
+Exemplo:
+
+  theme: {
+    extend: {
+      colors: {
+        "new-blue": "#1E2A78",
+      }
+    },
+  },</field></card><card><field name='Code'>Como criar um background image no tailwind?</field><field name='Text'>Dentro do tailwind.config.js
+
+
+theme: {
+  extend: {
+    backgroundImage: {
+      'arvore': 'url(../img/arvore.png)',
+    }
+  },
+}</field></card><card><field name='Code'>Como alterar o texto? Linha atraves de, underline, letra maiuscula ou minuscula</field><field name='Text'>Classes:
+line-through - linha sobre
+underline 
+lowercase
+upercase</field></card><card><field name='Code'>No flex, qual é o padrão para justify-content?</field><field name='Text'>justify-start</field></card><card><field name='Code'>Pra que serve a classe outline-?</field><field name='Text'>Dentro de um input-text, quando vc seleciona o campo, ele fica com uma borda preta por padrão, o outline-none remove essa borda.
+
+Ou vc pode inserir com outline-black etc</field></card><card><field name='Code'>Como resetar os estilos de um elemento html?</field><field name='Text'>class="appearance-none"</field></card><card><field name='Code'>O que é flex-wrap, para que serve, como é utilizado e qual é o seu comportamento padrão?</field><field name='Text'>Propriedade CSS: Usada em containers flexíveis.
+Finalidade: Controla a quebra de linha dos itens.
+Valores Principais:
+nowrap: Valor padrão; itens em uma única linha, sem quebra.
+wrap: Itens em várias linhas se necessário.
+Uso: Garante ajuste responsivo dos itens, evitando sobreposições ou espaçamentos indesejados.</field></card><card><field name='Code'>Como controlar o resize da text area?</field><field name='Text'>class="resize" 
+pode ser
+non
+-x
+-y
+ou 
+resize para todos os lados</field></card><card><field name='Code'>Pq configurar content: ["./src/**/*.html"]</field><field name='Text'>O double star "**" serve para buscar todas as pastas e sub-pastas sem limite de profundidade, o tailwind utiliza biblioteca como glob ou fast-glob para buscar os arquivos .html, para buscar as classes e fazer o build do css.
+
+Mas no bash por padrão, a busca recursiva de diretorios com double star é desativada, </field></card><card><field name='Code'>Qual é a diferença entre as classes content e items no Tailwind CSS, e como elas são usadas para alinhar elementos em um contêiner flexível?</field><field name='Text'>Classe items (align-items):
+
+Aplicação: Alinha os itens individuais dentro de uma única linha de um contêiner flexível.
+Efeito: Controla o alinhamento dos itens individuais ao longo do eixo cruzado (geralmente vertical) dentro de uma linha específica.
+Exemplo: .items-center centraliza todos os itens verticalmente em uma linha horizontal.
+Resumo: Pense nisso como o alinhamento dos itens dentro de uma linha específica.
+Classe content (align-content):
+
+Aplicação: Alinha as linhas inteiras dentro de um contêiner flexível quando há várias linhas.
+Efeito: Controla o alinhamento das linhas de itens ao longo do eixo cruzado (geralmente vertical) dentro do contêiner inteiro.
+Exemplo: .content-center centraliza as linhas de itens verticalmente em um contêiner flexível com várias linhas.
+Resumo: Pense nisso como o alinhamento das linhas inteiras dentro do contêiner.
+Diferença Principal:
+
+items lida com o alinhamento dos itens individuais dentro de uma linha específica.
+content lida com o alinhamento das linhas inteiras quando há várias linhas no contêiner.</field></card><card><field name='Code'>Como configurar novos tamanhos de fontes no tailwind?</field><field name='Text'>Dentro do arquivo tailwind.config.js
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './src/**/*.html',
+  ],
+  theme: {
+    extend: {
+      fontSize: {
+        '12xl': '8rem',
+      }
+    },
+  },
+  plugins: [],
+}</field></card><card><field name='Code'>Como adiciona borda no tailwind?</field><field name='Text'>Adiciona com a classe border (default 1px) 
+
+border border-black
+
+ou para bordas laterais
+
+E para todas as iniciais das laterais, T B L R
+
+border-t-black
+</field></card><card><field name='Code'>Como alinhar um texto em uma div no eixo X Y com altura? <div class="h-40">Text</div></field><field name='Text'>Voce precisa adicionar a classe flex, para poder usar as classes items-center e justify-center, caso contrario nao vai conseguir
+
+    <div class="h-40 flex justify-center items-center">
+        Text
+    </div>
+</field></card><card><field name='Code'>Quais são as propriedades justify dentro de um container flexivel?</field><field name='Text'>- justify-start (padrão) - Início do main axis do container pai.
+- justify-end - Final do main axis do container pai.
+- justify-center - No meio do main axis do container pai.
+- justify-around - Espaço distribuído no main axis do container pai.
+- justify-between - Espaço igual entre os elementos do main axis do container pai.</field></card><card><field name='Code'>Como as propriedades justify-content e align-items funcionam no Flexbox? Como elas interagem com os conceitos de main axis e cross axis?</field><field name='Text'>O Flexbox é um modelo de layout que permite o alinhamento de itens em contêineres, mesmo quando seus tamanhos são desconhecidos ou dinâmicos. As propriedades justify-content e align-items são fundamentais para controlar esse alinhamento.
+
+Main Axis (Eixo Principal): Por padrão, o main axis é horizontal (da esquerda para a direita), e a propriedade justify-content é usada para controlar o alinhamento dos itens ao longo desse eixo. Ela pode ter valores como flex-start, flex-end, center, space-between, space-around, etc.
+
+Cross Axis (Eixo Cruzado): Perpendicular ao main axis, o cross axis é vertical por padrão (de cima para baixo). A propriedade align-items controla o alinhamento dos itens ao longo desse eixo. Os valores possíveis incluem flex-start, flex-end, center, baseline, stretch, etc.
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Alinha os itens igualmente espaçados ao longo do eixo principal */
+  align-items: center; /* Centraliza os itens ao longo do eixo cruzado */
+}
+</field></card><card><field name='Code'>Como colocar um texto em negrito no tailwind?</field><field name='Text'>font-bold ou font-extra-bold</field></card><card><field name='Code'>Como fazer mostrar os marcadores de listas?</field><field name='Text'>Por padrão: Marcadores de listas são definidos como none.
+Para exibir marcadores: Utilize as classes list-disc para marcadores em forma de bolinha e list-inside para posicionar os marcadores dentro das divs.
+Exemplo:
+
+<ul class="list-disc list-inside">
+
+  <li>Item 1</li>
+  <li>Item 2</li>
+
+</ul></field></card><card><field name='Code'>Como atelrar o posicionamento de imagem background?</field><field name='Text'>bg-center
+bg-bottom
+bg-left
+bg-no-repeat</field></card><card><field name='Code'>Aonde as regras do grid container e flex são aplicadas? A ordem de aplicação, filhos netos</field><field name='Text'>São aplicadas apenas aos elementos filhos, aos netos não é aplicado</field></card><card><field name='Code'>Pra que serve a class "pointer-events-"?</field><field name='Text'>Por padrão, é pointer-events-auto
+
+Ela serve para todos os inputs do usuario, como text-area, drop-box, vc pode desabilitar para none
+
+Ai o usuario nao consegue inserir texto e nem selecionar drop-down</field></card><card><field name='Code'>Como você pode controlar o tamanho do background em Tailwind CSS, e quais são as opções disponíveis?</field><field name='Text'>No Tailwind CSS, você pode controlar o tamanho do background usando as classes bg-*. As opções principais incluem:
+
+bg-auto: (padrão) O tamanho da imagem de background é definido automaticamente, mantendo suas dimensões originais.
+
+bg-cover: A imagem de background é redimensionada para cobrir todo o contêiner, mantendo sua proporção original. Isso pode resultar em partes da imagem sendo cortadas se as proporções do contêiner e da imagem não coincidirem.
+
+bg-contain: A imagem de background é redimensionada para caber dentro do contêiner, mantendo sua proporção original. Isso garante que toda a imagem seja visível, mas pode deixar espaço em branco se as proporções do contêiner e da imagem não coincidirem.</field></card><card><field name='Code'>Propriedades da classe "select-"</field><field name='Text'>select-none  - nao pode selecionar
+select-full     - seleciona tudo
+</field></card><card><field name='Code'>Como declarar novas medias queries no TailWind e quais nomes podem ser, dica os nomes sao parecidos com tamanho de camisetas?</field><field name='Text'>Dentro do arquivo tailwind.config.js, na chave theme, inserir oque voce quer.
+Os nomes tem que ser diferentes dos ja existentes:
+
+sm: @media (min-width: 640px)
+md: @media (min-width: 768px)
+lg: @media (min-width: 1024px)
+xl: @media (min-width: 1280px)
+2xl: @media (min-width: 1536px)
+
+por exemplo
+
+  theme: {
+    ...,
+    screens: {
+      tablet: '640px',
+    },
+   ...
+  },</field></card><card><field name='Code'>Como alterar a cor de um placeholder?</field><field name='Text'>class="placeholder-red-400"</field></card><card><field name='Code'>Como funciona e como utilziar propriedade divide?</field><field name='Text'>Divide e insere uma borda nos elementos internos de uma div, exemplos:
+
+    <div class="grid grid-cols-4 divide-x-2 divide-blue-900 divide-dotted">
+        <div class="text-center">1</div>
+        <div class="text-center">2</div>
+        <div class="text-center">3</div>
+    </div>
+    <div class="divide-y-2 divide-purple-300 divide-dashed">
+        <p>Testando divide</p>
+        <p>Testando divide</p>
+        <p>Testando divide</p>
+    </div>
+
+Todos esses elementos, tem uma borda divindo eles, sem necessariamente colocar uma borda nos elementos</field></card><card><field name='Code'>Como adicionar padding tailwind?</field><field name='Text'>Vc adiciona padding apenas com a letra p-n
+
+p-4 - isso adiciona para todos os lados, ou vc pode definir para cada lado, usando as iniciais do lado como, L R B T
+
+pl-4
+pr-4
+pt-r
+pb-4</field></card><card><field name='Code'>Como a propriedade place-content funciona no CSS Grid e qual é sua relação com os eixos?</field><field name='Text'>A propriedade place-content no CSS Grid é uma abreviação que define o alinhamento do conteúdo em ambos os eixos simultaneamente:
+
+Combina align-content (alinhamento vertical) e justify-content (alinhamento horizontal).
+Exemplo: place-content: start center; (verticalmente alinhado ao início, horizontalmente centralizado).
+Diferente no Flexbox e CSS Grid, refere-se ao alinhamento do conteúdo em relação ao espaço extra no container.</field></card><card><field name='Code'>Como substituir uma cor, sem apagar todas as outras no tailwind?</field><field name='Text'>Dentro do adquivo tailwind.config.js, dentro de extend, colors, ai voce coloca a classe que você quer, exeplo RED, vai receber um objeto, pois gray tem varias cores, do 0 ao 900, e precisa importar as colors do node_modules
+assim
+
+const { colors } = require("tailwindcss/defaultTheme") 
+
+
+  theme: {
+    extend: {
+      colors: {
+        red:  {
+           ....color.gray, "900": "#999"
+           }
+      }
+    },
+  },
+
+Dessa forma voce altera uma cor especifica e mantem todas as outras</field></card><card><field name='Code'>Oque é importante para depois da instalação e setup o tailwind estar funcionando?</field><field name='Text'>Inserir onde buscar as classes htmls, no content no arquivo de configuração.
+
+**/*.html</field></card><card><field name='Code'>Como definir novos spacings tailwind? E para que servem?</field><field name='Text'>Os spacings controlam as margens, padding, largura e altura
+
+Para definir um novo spacing, dentro de tailwind.config.js em extend, para extender, digite spacing
+
+ex:
+theme: {
+   extend: {
+      spacing: {
+            "50": "20rem"
+      }
+   }
+}</field></card><card><field name='Code'>Qual classe para controlar espaçamento entre as linhas e quais suas propriedades?</field><field name='Text'>classes
+.leading-tight
+e 
+.leading-loose</field></card><card><field name='Code'>Como definir um grid? E como utilizar ele depois?</field><field name='Text'>Você precisa definir display: grid, e grid-cols-n ex: grid grid-cols-7, e voce utiliza os espaços com a propriedade col-span-n</field></card><card><field name='Code'>Para que serve a classe 'content-' e como usála?</field><field name='Text'>Definição: A classe content- no Tailwind CSS controla a propriedade CSS align-content, afetando o alinhamento das linhas inteiras dentro de um contêiner flexível com várias linhas.
+
+Requisitos: Utilizada com contêiner pai flexível e com flex-wrap habilitado.
+Opções disponíveis:
+
+content-start: Alinha ao início do eixo cruzado.
+content-center: Centraliza ao longo do eixo cruzado.
+content-end: Alinha ao final do eixo cruzado.
+content-between: Distribui espaço igualmente entre as linhas.
+content-around: Distribui espaço igualmente ao redor das linhas.
+content-evenly: Distribui espaço igualmente entre as linhas, mantendo o mesmo espaço entre todas.
+
+Utilidade: Permite controlar o alinhamento das linhas inteiras em relação umas às outras dentro do contêiner, aplicável apenas quando há várias linhas de itens.</field></card><card><field name='Code'>Oque é box-sizing e para que serve, e quais são as propriedades do box-sizing?</field><field name='Text'>Definição: box-sizing determina como o navegador calcula a altura e largura dos elementos html.
+
+Propriedades Principais:
+
+border-box: A largura e altura incluem o conteúdo, padding e borda. Se definir uma largura de 1000px, padding de 15px e borda de 5px, a largura total será 1020px.
+
+content-box: A largura e altura são aplicadas apenas ao conteúdo. Padding e borda são adicionados dentro da dimensão especificada.
+
+Utilidade: Permite controlar o layout e o dimensionamento dos elementos de maneira precisa, especialmente quando se trabalha com layouts responsivos.</field></card><card><field name='Code'>Como definir o max-width no tamanho personalizado no tailwind? Em vez de ser min-width que é a abordagem do tailwind?
+</field><field name='Text'>Dentro do arquivo tailwind.config.js, dentro de themes, screens, defina o nome, diferente dos existestes, e insira um objeto, com max e o tamanho, exemplo
+
+  theme: {
+    screens: {
+      cel: {"max": "400px"}
+    }
+  },
+
+O nome da classe é cel, e ele trabalha com desktop first, definindo o max</field></card></cards></deck>
