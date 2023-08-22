@@ -1,9 +1,6 @@
-from dataclasses import dataclass
-from datetime import date
 from fastapi import FastAPI
-
-from hotel.db.engine import init_db, DBSession
-from hotel.db.models import DBRoom
+from hotel.routers import rooms
+from hotel.db.engine import init_db
 
 app = FastAPI()
 
@@ -17,8 +14,4 @@ def startup_event():
 def read_root():
     return "This is the root of the API"
 
-@app.get("/rooms")
-def read_all_rooms():
-    session = DBSession()
-    rooms = session.query(DBRoom).all()
-    return rooms
+app.include_router(rooms.router)
