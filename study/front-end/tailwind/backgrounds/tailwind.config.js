@@ -1,3 +1,5 @@
+import { colors } from 'tailwindcss/defaultTheme'
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,6 +9,11 @@ module.exports = {
     extend: {
       backgroundImage: {
           'arvore': "url('../img/arvore.png')",
+      },
+      colors: {
+        red: {
+          ...colors.red, "yuri": "#FF0000"
+        }
       }  
     },
   },
