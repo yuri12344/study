@@ -11,7 +11,7 @@ Siga os passos abaixo para instalar o Python usando o ASDF:
 2. Instale dependencias necessarias
 
    ```bash
-   sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+   sudo apt-get install git --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
    ```
 
 3. Clone o repositorio ASDF
@@ -47,10 +47,10 @@ Siga os passos abaixo para instalar o Python usando o ASDF:
 8. Install the desired version
 
    ```bash
-   asdf install python 3.11.4
+   asdf install python 3.11.5
    ```
 
 9. Set the global python
    ```bash
-   asdf global python 3.11.4
+   asdf global python 3.11.5
    ```
