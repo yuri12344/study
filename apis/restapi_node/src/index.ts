@@ -22,7 +22,7 @@ server.listen(3000, () => {
     console.log("Server is running on port http://localhost:3000")
 })
 
-const MONGO_URL = "mongodb://mongo:Silverado321@easypanel.brconnect.click:27017"
+const MONGO_URL = "mongodb://mongo:Silverado321@easypanel.brconnect.click:27018"
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL)
