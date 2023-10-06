@@ -4,13 +4,15 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
+
+import router from './router';
 import mongoose from 'mongoose';
 
 const app = express();
 
 app.use(cors({
-    credentials: true
-}))
+    credentials: true,
+}));
 
 app.use(compression());
 app.use(cookieParser());
@@ -19,14 +21,15 @@ app.use(bodyParser.json());
 const server = http.createServer(app);
 
 server.listen(3000, () => {
-    console.log("Server is running on port http://localhost:3000")
-})
+    console.log('Server running on http://localhost:3030/');
+});
 
-const MONGO_URL = "mongodb://mongo:Silverado321@easypanel.brconnect.click:27018"
+const MONGO_URL = "mongodb://mongo:Silverado321@144.22.187.69:27018"
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGO_URL)
+mongoose.connect(MONGO_URL);
+mongoose.connection.on('error', (error: Error) => console.log(error));
 
-mongoose.connection.on('error', (error: Error) => {
-    console.log(error)
-})
+app.use('/', router());
+
+
